@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+      body {
+    min-height: 100vh;
+    background-color: transparent;
+    background: url('https://images.unsplash.com/photo-1724579243039-f04a8ee5630e?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat;
+    background-size: cover;
+}
+
+.Wraper {
+    width: 400px;
+    background-color: purple;
+    color: #fff;
+    position: absolute;
+    height: 410px;
+    border: 2px solid;
+    border-radius: 25px;
+    background-color: transparent;
+    border-color: #fff;
+    padding: 30px 40px;
+    backdrop-filter: blur(20px) ;
+    left: 26.5%;
+    top: 39%;
+}
+
+.Wraper h1 {
+    font-size: 45px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Wraper .Input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.Input-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(225, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    width: 330px;
+   height: 10px;
+   padding: 20px 45px 20px 20px;
+
+}
+
+.Input-box input::placeholder {
+    color: #fff;
+}
+
+.Input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Wraper .btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Wraper .Remember {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.Remember label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.Remember a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.Remember a:hover {
+    text-decoration: underline;
+
+}
+
+.Wraper .register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+.register a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: transparent;
+            padding: 30px 25px;
+            font-size: 20px;
+            border-radius:15px ;
+            border: 5px solid white;
+            border-top: 0px;
+            backdrop-filter: blur(100px);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            backdrop-filter: blur(40px);
+            border: 4px solid white;
+            border-radius: 15px;
+            
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-item {
+            position: relative;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .submenu a {
+            padding: 10px 20px;
+        }
+        .menu-item:hover .submenu {
+            display: block;
+        }
+        .logo {
+          font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="Tugas6.html" class="logo">Home</a>
+        <ul class="menu">
+            <li class="menu-item"><a href="Form.html">Form</a></li>
+            <li class="menu-item"><a href="mywebsite.html">Table</a></li>
+            <li class="menu-item">
+                <a href="Biodata.html">Biodata</a></li>
+            <li class="menu-item"><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+ <div class="Wraper">
+  <form action="">
+      <h1>login</h1> 
+    <div class="Input-box">
+       <input type="text" 
+       placeholder="Username" Required>
+       <i class='bx bxs-user'></i>
+    </div>
+    <div class="Input-box">
+        <input type="password"
+        placeholder="Password" required>
+        <i class='bx bxs-lock-alt' ></i>
+    </div>
+    <div class="Remember">
+        <label><input type="checkbox">Remember me</label>
+        <a href="#">Forgot Password?</a>
+    </div>
+
+    <button type="submit" class="btn">Login</button>
+
+    <div class="register">
+        <p>Don't  have an account?<a href="a"> Register</a></p>
+
+    </div>
+  </form>
+ </div>
+</body>
+</html>

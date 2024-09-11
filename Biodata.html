@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Biodata</title>
+  <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 30px 25px;
+            font-size: 22px;
+            border: 5px solid white;
+            border-radius: 15px;
+            border-top: 0px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 15px;
+            border: 4px solid white;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-item {
+            position: relative;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .submenu a {
+            padding: 10px 20px;
+        }
+        .menu-item:hover .submenu {
+            display: block;
+        }
+        form {
+          width: 500px;
+          font-size: 30px;
+          position: absolute;
+          left:200px;
+          animation: animasi 4s;
+        }
+        @keyframes animasi
+        {
+          from {left:10px;}
+          to {left: 200px;}
+        }
+        h1 {
+          padding: 20px 100px;
+        }
+        fieldset {
+          height: 100%;
+          border: 5px solid;
+          background-color: lightcyan;
+          border-radius: 15px;
+        }
+      
+        input {
+          width: 300px;
+          height: 35px;
+          font-size: 20px;
+          border: 4px solid;
+          border-radius: 15px;
+        }
+        .radio input {
+          width: 90px;
+          height: 35px;
+        }
+        fieldset .kirim {
+          width: 100px;height: 50px;
+          justify-content: center;
+        }
+        .logo {
+          font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="Tugas6.html" class="logo">Home</a>
+        <ul class="menu">
+            <li class="menu-item"><a href="Form.html">Form</a></li>
+            <li class="menu-item"><a href="mywebsite.html">Table</a></li>
+            <li class="menu-item">
+                <a href="Biodata.html">Biodata</a></li>
+            <li class="menu-item"><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+    <h1>Muhamad Hafidh Khoerullah</h1>
+    <div id="helo">
+      <form>
+        <fieldset>
+          <legend><h4>Biodata</h4></legend>
+          <label for="nama">Nama Lengkap</label><br>
+          <input type="text" id="nama" placeholder="nama lengkap"><br><br>
+          <label for="nik">NO.NIK</label><br>
+          <input type="number" id="nik" placeholder="Nomor Induk Kependudukan"><br><br>
+          <label for="nisn">NISN</label><br>
+          <input type="number" id="nisn" placeholder="Nomor Induk Siswa Nasional"><br><br>
+          <label for="jenis">Jenis Kelamin</label><br><br>
+                <div class="radio"><input type="radio" id="Laki-Laki" name="kelamin" value="Laki-Laki">
+  <label for="Laki-Laki">Laki-Laki</label><br>
+  <input type="radio" id="perempuan" name="kelamin" value="perempuan">
+  <label for="perempuan">Perempuan</label></div><br><br>
+        <label for="tempat">Tempat Lahir</label><br>
+        <input type="text" id="tempat" placeholder="*Bogor*"><br><br>
+        <label for="tanggal">Tanggal Lahir</label><br>
+        <input id="tanggal"type="date" placeholder="1/6/2008"><br><br>
+        <label id="alamat">Alamat</label><br>
+        <input id="alamat"type="text" placeholder="RT/RW.KEL/DESA.KEC.KAB/KOTA"><br><br>
+        <label for="agama">Agama</label><br>
+        <input id="agama"type="text" placeholder="Islam"><br><br>
+        <label>Riwayat Pendidikan</label><br>
+        <label for="tk">TK</label><br>
+        <input id="tk"type="text" placeholder="TK"><br>
+        <label for="sd">SD</label><br>
+        <input id="sd"type="text" placeholder="SD"><br>
+               <label for="smp">SMP</label><br>
+        <input id="smp"type="text"placeholder="SMP"><br>
+               <label for="sma">SMK/SMA</label><br>
+        <input id="sma"type="text" placeholder="SMA/SMK"><br><br>
+        <label for="no">No.Telp</label><br>
+        <input id="no"type="number" placeholder="08XXX"><br><br>
+        <label for="mail">Email</label><br>
+        <input id="mail" type="email" placeholder="email123@gmail.com"><br><br>
+        <input class="kirim" type="submit" value="Kirim">
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

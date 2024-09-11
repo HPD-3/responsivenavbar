@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif;  }
+
+        .navbar {
+            background-color: lightblue;
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;   
+padding: 0 20px;
+        }
+
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            position: relative;
+            width: 30px;
+            height: 21px;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-toggle .bar {
+            background-color: #fff; height: 3px;  width: 100%;   transition: all 0.3s ease;
+        }
+
+        .nav-links {
+            list-style: none; display: flex;  margin: 0;  padding: 0;
+        }
+
+        .nav-links li {  margin: 0 15px; }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: #ddd; }
+
+        /* Responsive styles */
+        @media (max-width: 768px) { 
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: lightblue;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                z-index: 1000;
+                padding: 0;
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-links li {  margin: 15px 0;  text-align: center; }
+            .nav-links a { font-size: 20px; }
+        }
+
+        /* Hide menu-toggle on larger screens */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;  height: auto; margin-top: 60px; padding: 10px 20px;
+            box-sizing: border-box;
+            background-color: lightcyan;
+        }
+
+        .hero-col {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            box-sizing: border-box;
+            border: 0px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: #fff;
+        }
+
+        .hero-col.left { flex: 1; }
+        .hero-col.right { flex: 1; display: flex; justify-content: center; }
+        .hero-col.right img { width: 100%;  height: auto;  border: 1px solid #ddd;  border-radius: 10px;
+        ; }
+        .hero-col.left h1 { margin: 0; font-size: 36px; }
+        .hero-col.left p { font-size: 24px; margin: 0;   }
+
+        @media (max-width: 768px) {
+            .hero {  flex-direction: 
+            column; padding: 10px 20px;
+            }
+            .hero-col { margin: 0px; padding: 20px; }
+            .hero-col.left { text-align: center; } 
+         .hero-col.right { margin-top: 20px; padding: 0; }
+        }
+
+ /* About Section */
+        .about { 
+           padding: 60px 20px; background-color: lightblue;  text-align: center; }
+        .about h2 { font-size: 36px; margin-bottom: 20px; }
+        .about p { font-size: 18px; line-height: 1.6; margin: 0 auto; max-width: 800px; }
+        
+        .skills {
+          display: none;
+          padding: 60px 20px;
+          background-color: lightcyan;
+          text-align: center;
+          justify-content: center;
+          margin-top: 40px;
+          font-size: 20px;
+        }
+        .skills h4 {
+          text-align: left;
+        }
+        .skills .rmv {
+          position: absolute;
+          display: flex;
+          right: 60px;
+          top: 1275px;
+          font-size: 60px;
+        }
+        .port {
+          display: none;  height: auto; margin-top: 40px; padding: 10px 20px;
+            background-color: lightblue;
+            background: url('https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?q=80&w=802&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat;
+            background-size: cover;
+            justify-content: flex-start;
+            color: white;
+        }
+
+        .link {
+           padding: 0;
+           margin-top: -10px;
+           margin-left: 40px;
+           list-style: none;
+           text-align: left;
+           font-size: 40px;
+       }
+       .link h1 {
+         text-align: end;
+         position: relative;
+         left: 375px;
+         font-size: 60px;
+       }
+       @media (max-width: 768px){
+         .link {
+           font-size: 18px;
+           margin-left: 0;
+         }
+         .link h1 {
+           left: 125px;
+           font-size: 30px;
+         }
+         .skills .rmv{
+           font-size: 30px;
+           right: 20px;
+           top: 900px;
+         }
+       }
+       .link li {
+           margin: 5px 0;
+           padding: 10px;
+       }
+       .link a {
+         text-decoration: none;
+         padding: 20px;
+       }
+       .link h2 {
+         position: relative;
+         left:175px;
+         top: -70px;
+       }
+       .link button {
+         width: 300px;
+         height: 125px;
+         font-size: 30px;
+         border: white 3px solid;
+         border-radius: 10px;
+         color:white;
+         backdrop-filter: blur(20px);
+         background-color: transparent;
+       }
+
+       .cont {
+         background:url('https://images.unsplash.com/photo-1447433589675-4aaa569f3e05?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat
+         ;
+         background-size: cover;
+         width: 100%;
+         height: 500px;
+         display: none;
+         justify-content: center;
+         align-items:center;
+         margin-top:40px;
+         font-size: 30px;
+         color: white;
+       }
+       .cont h3{
+         position:relative;
+         right:25px;
+         top:-210px;
+         font-size: 50px;
+       }
+       
+       .email {
+         width: 85%;
+         height:385px;
+         background-color: transparent;
+         backdrop-filter: blur(20px
+         );
+         border: 3px solid white;
+         border-radius:20px;
+         
+         justify-content: center
+         ;
+         align-items: center;
+         text-align: center;
+         padding-top: 70px;
+       }
+             @media (max-width:768px){
+         .link h2 {
+           position: relative;
+           left: 50px;
+           top: -30px;
+         }
+         .email {
+           padding-top:100px;
+           font-size:18px;
+           height:270px;
+         }
+         .link button {
+           width: 100px;
+           height: 50px;
+           font-size: 13px;
+         }
+         .cont h3 {
+           top:-230px;
+           font-size: 30px;
+           left: 10px;
+         }
+       }
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">MyWebsite</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#isi">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skils" onclick="document.getElementById('skils').style.display = 'block'">Skills</a></li>
+                <li><a href="#port" onclick="document.getElementById('port').style.display = 'flex'">Portfolio</a></li>
+                <li><a href="#contact" onclick="document.getElementById('contact').style.display = 'flex'">Contact</a></i>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-col left">
+            <div>
+                <h1>Welcome to</h1>
+                <p>My Personal Website</p>
+            </div>
+        </div>
+        <div class="hero-col right">
+            <img src="https://images.unsplash.com/photo-1529788295308-1eace6f67388?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Illustration">
+        </div>
+    </section>
+
+<!-- About Section -->
+<div id="isi">
+<section class="about" id="about">
+    <h2>Tentang Saya</h2>
+    <p>
+        Halo, saya Hafidh, seorang profesional di bidang pengembangan web yang menawarkan layanan pembuatan dan pengembangan situs web untuk berbagai kebutuhan. Dengan spesialisasi dalam HTML, CSS, dan JavaScript, serta pengalaman dalam desain UX/UI.
+    </p>
+</section>
+<section class="skills" id="skils">
+  <h1 class="rmv" id="rmv"><a onclick="document.getElementById('skils').style.display = 'none'">x</a></h1>
+  <h3>Skills</h3>
+  <h4>Ms.Word       :------------------50%</h4>
+  <h4>Ms.Excel      :----10%</h4>
+  <h4>Ms.Powerpoint :---------30%</h4>
+  <h4>Canva         :-------------------60%</h4>
+  <h4>Capcut        :-------20%</h4>
+  <h4>VsCode        :-----------------------70%</h4>
+  
+</section>
+<div class="port" id="port">
+  <ul class="link">
+    <h1 onclick="document.getElementById('port').style.display = ('none')">x</h1>
+    <h2>This is My Work</h2>
+    <li><a href="Biodata.html"><button>Biodata Form</button></a></li>
+    <li><a href="mywebsite.html"><button>Mywebsite</button></a></li>
+    <li><a href="Login.html"><button>Login Page</button></a></li>
+    <li><a href="Form.html"><button>basic form page</button></a></li>
+    <li><a href="Tugas5.html"><button>Home Page</button></a></li>
+  </ul>
+</div>
+<div class="cont" id="contact">
+  <h3><a onclick="document.getElementById('contact').style.display = 'none'">x</a></h3>
+  <div class="email">
+  <h1>My Gmail</h1>
+  <h2>hapidh333@gmail.com</h2>
+  </div>
+</div>
+</div>
+<footer style="background-color: lightblue; color: #f4f4f4; padding: 15px; text-align: center;font-size:15px;
+margin-top:10px; position:sticky;">
+    <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+
+</footer>
+<script>       
+document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            menuToggle.addEventListener('click', function() {
+                  navLinks.classList.toggle('active');
+            });
+            
+            // Menambahkan event listener untuk setiap link dalam menu
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                navLinks.classList.remove('active'); // Menutup menu setelah item diklik
+                });
+            });
+        });
+ </script>
+</body>
+</html> 
